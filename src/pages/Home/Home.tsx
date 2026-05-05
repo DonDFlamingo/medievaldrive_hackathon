@@ -5,7 +5,6 @@ function Home(){
     return(
         <>
        <div className='banniere-image' >
-        {/* <img src={banniere} alt="banniere-image" className='banniere-image'/> */}
         <div className='banniere-container'>
         <h1 className='title-home'>Voyager à travers les royaumes avec Distinction</h1>
         <p className='banniere-para'>Découvrez une excellence de transport sans précedent.Des carrosses royaux </p>
