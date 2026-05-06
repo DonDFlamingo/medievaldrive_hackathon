@@ -1,8 +1,35 @@
 import './Home.css'
 import Card2 from '../../assets/Card-2.png'
+import {useEffect, useState } from "react";
+
+
+type CityType = {
+  id: number;
+  name: string;
+};
+
 
 function Home(){
+
+      const [departure, setDeparture] = useState<number | "">("");
+    const [destination, setDestination] = useState<number | "">("");
+    const [cities, setCities] = useState<CityType[]>([]);
+
+
+    useEffect(() => {
+    fetch("http://localhost:3310/api/cities")
+    .then((res) => res.json())
+    .then((data: CityType[]) => {
+      setCities(data);
+     });
+    }, []);
+
+     const filteredCities = cities.filter((city) => {
+    return city.name;
+  });
+
     return(
+     
         <>
        <div className='banniere-image' >
         <div className='banniere-container'>
@@ -12,11 +39,35 @@ function Home(){
         <div className="search-destination">
          <div className="field">
             <label htmlFor="point_de_depart" className="label">POINT DE DEPART</label>
-              <input type="text" id="point_de_depart" className="home-input" placeholder="Cité d'Argent" />
+              <select
+              id="point_de_depart"
+              className="home-input"
+              value={departure}
+              onChange={(e) => setDeparture(e.target.value ? Number(e.target.value) : "")}
+            >
+              <option value="">Choisir...</option>
+                 {filteredCities.map((city) => (
+              <option key={city.id} value={city.id}>
+                 {city.name}
+              </option>
+              ))}
+            </select>
          </div>
          <div className="field">
            <label htmlFor="destination" className="label">DESTINATION</label>
-           <input type="text" id="destination" className="home-input" placeholder="Port de 'Aube" />
+           <select
+             id="destination"
+             className="home-input"
+             value={destination}
+             onChange={(e) => setDestination(e.target.value ? Number(e.target.value) : "")}
+           >
+             <option value="">Choisir...</option>
+               {filteredCities.map((city) => (
+               <option key={city.id} value={city.id}>
+                 {city.name}
+                 </option>
+               ))}
+           </select>
         </div>
          <button type="button" className="home-button">RESERVER</button>
         </div>
