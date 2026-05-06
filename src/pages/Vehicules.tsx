@@ -15,38 +15,33 @@ type Vehicle = {
 };
 
 function Vehicules() {
+
   const [vehicules, setVehicules] = useState<Vehicle[]>([]);
+  const [selectedVehicule, setSelectedVehicule] = useState<number | null>(null);
 
   useEffect(() => {
+
     fetch("http://localhost:3001/api/vehicules")
+
       .then((response) => response.json())
+
       .then((data: Vehicle[]) => {
+
         console.log(data);
         setVehicules(data);
+
       })
+
       .catch((error) => {
+
         console.log(error);
+
       });
+
   }, []);
 
-  // const destriers = vehicles.filter(
-  //   (vehicle) =>
-  //     vehicle.name.toLowerCase().includes("destrier") ||
-  //     vehicle.name.toLowerCase().includes("cheval")
-  // );
-
-  // const diligences = vehicles.filter(
-  //   (vehicle) =>
-  //     vehicle.name.toLowerCase().includes("diligence") ||
-  //     vehicle.name.toLowerCase().includes("caleche") ||
-  //     vehicle.name.toLowerCase().includes("calèche")
-  // );
-
-  // const carrosses = vehicles.filter((vehicle) =>
-  //   vehicle.name.toLowerCase().includes("carrosse")
-  // );
-
   return (
+
     <div className="vehicles-page">
 
       <section className="hero">
@@ -57,12 +52,14 @@ function Vehicules() {
             NOS VÉHICULES
           </span>
 
-          <h1>
+          <h1 className="hero-title">
             Choisissez <br />
             votre véhicule
           </h1>
 
-          <p>
+          <div className="hero-line"></div>
+
+          <p className="hero-description">
             Des montures rapides aux carrosses somptueux,
             trouvez le transport parfait pour votre voyage
             dans le royaume.
@@ -75,6 +72,7 @@ function Vehicules() {
           <img
             src={map}
             alt="Carte médiévale"
+            className="map-image"
           />
 
         </div>
@@ -94,21 +92,20 @@ function Vehicules() {
           alt="Sceau médiéval"
         />
 
-        <div className="category">
+        <div className="vehicles-container">
 
+          {vehicules.map((vehicule) => (
 
-          <p className="category-description">
-            Des chevaux rapides et agiles pour les voyageurs seuls.
-          </p>
+            <div
+              className={`vehicle-card ${selectedVehicule === vehicule.id
+                  ? "selected-card"
+                  : ""
+                }`}
+              key={vehicule.id}
+              onClick={() => setSelectedVehicule(vehicule.id)}
+            >
 
-          <div className="vehicles-container">
-
-            {vehicules.map((vehicule) => (
-
-              <div
-                className="vehicle-card"
-                key={vehicule.id}
-              >
+              <div className="vehicle-image-container">
 
                 <img
                   className="vehicle-image"
@@ -116,42 +113,66 @@ function Vehicules() {
                   alt={vehicule.nom}
                 />
 
-                <div className="vehicle-info">
+                {selectedVehicule === vehicule.id && (
 
-                  <div>
-
-                    <h3>
-                      {vehicule.nom}
-                    </h3>
-
-                    <p>
-                      {vehicule.description}
-                    </p>
-
-                    <p>
-                      Nombre de places:
-                      {vehicule.nombre_places}
-                    </p>
-
+                  <div className="selected-check">
+                    ✓
                   </div>
 
-                  <span className="price">
-                    {vehicule.prix_ecu} écus
-                  </span>
-
-                </div>
+                )}
 
               </div>
 
-            ))}
+              <div className="vehicle-info">
 
-          </div>
+                <div className="vehicle-content">
+
+                  <h3 className="vehicle-name">
+                    {vehicule.nom}
+                  </h3>
+
+                  <p className="vehicle-description">
+                    {vehicule.description}
+                  </p>
+
+                  <div className="vehicle-details">
+
+                    <span>
+                      👥 {vehicule.nombre_places} places
+                    </span>
+
+                    <span>
+                      ⚔ Premium
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <span className="price">
+                  {vehicule.prix_ecu} écus
+                </span>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        <div className="button-container">
+
+          <button className="choose-button">
+            CHOISISSEZ
+          </button>
 
         </div>
 
       </section>
 
     </div>
+
   );
 }
 
