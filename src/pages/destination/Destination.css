@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=DynaPuff:wght@400..700&family=UnifrakturCook:wght@700&display=swap");
+
+.destination {
+	/* height: 100vh; */
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	.vielle-map {
+		width: 70%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		background-image: url(../../assets/vielleCarte.jpg);
+		background-repeat: no-repeat;
+		background-size: 145%;
+		background-position: center;
+		border-radius: 10px;
+
+		.suggestion-lieu {
+			height: 85%;
+			width: 95%;
+			background-color: #f7f3e9;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 10px;
+			font-family: "UnifrakturCook", cursive;
+			font-size: 30px;
+
+			.h2-suggestion-lieu {
+				margin: 10px;
+			}
+
+			.hr-under-h2 {
+				border: none;
+				height: 3px;
+				background-color: #c4b9a062;
+				width: 8%;
+				margin: 10px;
+			}
+			/* .hr-beyond-h2 {
+				border: none;
+				height: 3px;
+				background-color: #c4b9a0;
+				width: 100%;
+				margin: 20px auto;
+			} */
+			.selection-destination {
+				width: 40%;
+				border: 2px solid #c4b9a0;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				margin-bottom: 20px;
+
+				.depart-destination {
+					margin: 20px;
+					cursor: pointer;
+					font-size: 18px;
+					font-family: "Manrope", sans-serif;
+					border: 2px solid #c4b9a0;
+					border-radius: 10px;
+				}
+				.arrivee-destination {
+					margin: 20px;
+					cursor: pointer;
+					font-size: 18px;
+					font-family: "Manrope", sans-serif;
+					border: 2px solid #c4b9a0;
+					border-radius: 10px;
+				}
+			}
+			/* .separation-selection-suggestion {
+				border: none;
+				height: 3px;
+				background-color: #c4b9a049;
+				width: 100%;
+				margin-top: 20px;
+			} */
+			.suggestion-lieu-item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 10vh;
+				border-bottom: 1px solid #c4b9a049;
+				border-top: 1px solid #c4b9a049;
+				width: 100%;
+			}
+		}
+	}
+}
