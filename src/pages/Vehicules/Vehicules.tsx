@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Vehicules.css";
+import {ArrowRightIcon} from "@radix-ui/react-icons";
+
 
 import parchemin from "../../assets/parchemin.png";
 import sceau from "../../assets/sceau-medieval.png";
@@ -16,17 +18,27 @@ type Vehicle = {
 	nombre_places: number;
 };
 
-type CityType = {
-	id: number;
-	lieu: string;
-	arrivedCities: string;
-	departureCities: string;
-};
+// type CityType = {
+// 	id: number;
+// 	lieu: string;
+// 	arrivedCities: string;
+// 	departureCities: string;
+// };
+
 function Vehicules() {
 	const [vehicules, setVehicules] = useState<Vehicle[]>([]);
-	const { state } = useLocation() as { state: CityType };
+	// const { state } = useLocation() as { state: CityType };
+	const location = useLocation();
+const state = location.state as { arrivedCities: string; departureCities: string; departureDistance:number; arrivedDistance:number };
 	console.log(state);
+
+
 	useEffect(() => {
+		window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
 		fetch("http://localhost:3001/api/vehicules")
 			.then((response) => response.json())
 			.then((data: Vehicle[]) => {
@@ -36,6 +48,7 @@ function Vehicules() {
 			.catch((error) => {
 				console.log(error);
 			});
+			
 	}, []);
 
 	return (
@@ -59,7 +72,15 @@ function Vehicules() {
 					<img src={map} alt="Carte médiévale" />
 				</div>
 			</section>
-
+			 <div className='departArriverPageVehicule'>
+			<div className='départDestinationPageVehicule'>
+				<h2 className='h2Vehicule'>POINT DE DEPART</h2> <br />{state.departureCities}
+					</div>
+						<ArrowRightIcon className='iconFlecheVoyage'/>
+						 <div>
+						  <h2 className='h2Vehicule'>DESTINATION</h2> <br />{state.arrivedCities}
+						 </div>
+					</div>															
 			<section
 				className="parchemin-section"
 				style={{
@@ -69,15 +90,16 @@ function Vehicules() {
 				<img src={sceau} className="sceau" alt="Sceau médiéval" />
 
 				<div className="category">
-					<p className="category-description">
+					{/* <p className="category-description">
 						Des chevaux rapides et agiles pour les voyageurs seuls.
-					</p>
+					</p> */}
 
 					<div className="vehicles-container">
 						{vehicules.map((vehicule) => (
 							<Link
 								to="/detailsDuVoyage"
 								className="vehicle-card"
+								state={{voyage:state,vehicule:vehicule}}
 								key={vehicule.id}
 							>
 								<img

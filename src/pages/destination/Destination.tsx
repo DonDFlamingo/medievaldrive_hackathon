@@ -9,6 +9,8 @@ type CityType = {
 	arrivedCities: string;
 	departureCities: string;
 	distance_index: number;
+	arrivedDistance:number;
+	departureDistance:number;
 };
 
 function Destination() {
@@ -20,7 +22,9 @@ function Destination() {
 			state: {
 				arrivedCities: state.arrivedCities,
 				departureCities: lieuName,
-				distance_index,
+				departureDistance:distance_index,
+				arrivedDistance:state.arrivedDistance,
+				
 			},
 		});
 	};
@@ -29,11 +33,17 @@ function Destination() {
 			state: {
 				arrivedCities: lieuName,
 				departureCities: state.departureCities,
-				distance_index,
+				arrivedDistance:distance_index,
+				departureDistance:state.departureDistance,
 			},
 		});
 	};
 	useEffect(() => {
+			window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
 		fetch("http://localhost:3001/api/destinations")
 			.then((res) => res.json())
 			.then((data: CityType[]) => {

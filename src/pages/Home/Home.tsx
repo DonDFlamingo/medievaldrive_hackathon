@@ -19,7 +19,7 @@ function Home() {
 		navigate("/destination", {
 			state: {
 				departureCities: lieuName,
-				distance_index,
+				departureDistance:distance_index,
 			},
 		});
 	};
@@ -28,12 +28,16 @@ function Home() {
 		navigate("/destination", {
 			state: {
 				arrivedCities: lieuName,
-				distance_index,
+				arrivedDistance:distance_index,
 			},
 		});
 	};
-
 	useEffect(() => {
+    	window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
 		fetch("http://localhost:3001/api/destinations")
 			.then((res) => res.json())
 			.then((data: CityType[]) => {

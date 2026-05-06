@@ -10,10 +10,27 @@ body {
 
     background: #f6efe3;
 
-    font-family: "Cinzel", serif;
+    /* font-family: "Cinzel", serif; */
     color: #2d2418;
 }
+.h2Vehicule {
+color: #C5A059;
+}
 
+.departArriverPageVehicule {
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 90px auto;
+    width: 50%;
+}
+
+.départDestinationPageVehicule {
+    display: flex;
+    flex-direction: column;
+}
 /* =========================
    PAGE
 ========================= */
@@ -24,6 +41,7 @@ body {
     background: linear-gradient(180deg,
             #f6efe3 0%,
             #efe4d1 100%);
+
 }
 
 /* =========================
@@ -254,9 +272,10 @@ body {
 ========================= */
 
 .vehicle-info {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     align-items: center;
+    text-align: center;
 
     padding: 24px;
 }
@@ -266,7 +285,7 @@ body {
 .vehicle-info h3 {
     margin: 0 0 10px 0;
 
-    font-size: 28px;
+    font-size: 20px;
     color: #2e241a;
 }
 
@@ -277,7 +296,7 @@ body {
 
     color: #6e5d49;
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* =========================

@@ -2,6 +2,12 @@ import "./Profil.css";
 import ProfilImg from "../../assets/profil.png";
 
 function Profil() {
+     	window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+
 	return (
 		<>
 			<div className="profil-info">
