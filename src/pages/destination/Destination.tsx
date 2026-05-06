@@ -1,11 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate,useLocation } from "react-router-dom";
 import "./Destination.css";
-type Lieu = {
-	id: number;
-	name: string;
+
+
+type CityType = {
+  id: number;
+  lieu: string;
+  arrivedCities:string;
+  departureCities:string;
 };
+
 function Destination() {
-	const [destination, setDestination] = useState<Lieu[]>([]);
+	const [destination, setDestination] = useState<CityType[]>([]);
+	
+	const {state}=useLocation() as {state:CityType}
+	
+	   useEffect(() => {
+		 fetch('http://localhost:3001/api/destinations')
+		 .then((res) => res.json())
+		 .then((data: CityType[]) => {
+		   setDestination(data)
+		  });
+		 }, []);
+
+	 console.log(state)
+
 	console.log(setDestination);
 	return (
 		<div className="destination">
@@ -21,10 +40,10 @@ function Destination() {
 							id="depart-destination"
 							defaultValue=""
 						>
-							<option value="">Sélectionnez une destination</option>
+							<option value={state.lieu}>{state.departureCities || "choisir..."}</option>
 							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.name}>
-									{lieu.name}
+								<option key={lieu.id} value={lieu.lieu}>
+									{lieu.lieu}
 								</option>
 							))}
 						</select>
@@ -34,26 +53,22 @@ function Destination() {
 							id="arrivee-destination"
 							defaultValue=""
 						>
-							<option value="">Sélectionnez une destination</option>
+							<option value="">{state.arrivedCities || "choisir..."}</option>
 							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.name}>
-									{lieu.name}
+								<option key={lieu.id} value={lieu.lieu}>
+									{lieu.lieu}
 								</option>
 							))}
 						</select>
 					</div>
-					{/* <hr className="separation-selection-suggestion" /> */}
-					{/* {destination.map((lieu) => (
+					<div className="scroll-suggestion-lieu">
+					{destination.map((lieu) => (
 						<div key={lieu.id} className="suggestion-lieu-item">
-							{lieu.name}
+							{lieu.lieu}
 						</div>
-					))} */}
-					<div className="suggestion-lieu-item"> destination</div>
-					<div className="suggestion-lieu-item"> destination</div>
-					<div className="suggestion-lieu-item"> destination</div>
-					<div className="suggestion-lieu-item"> destination</div>
-					<div className="suggestion-lieu-item"> destination</div>
-					<div className="suggestion-lieu-item"> destination</div>
+					))}
+					</div>
+					
 				</div>
 			</div>
 		</div>

@@ -1,32 +1,53 @@
 import './Home.css'
 import Card2 from '../../assets/Card-2.png'
 import {useEffect, useState } from "react";
+import { useNavigate} from 'react-router-dom';
+// import 
 
 
 type CityType = {
   id: number;
-  name: string;
+  lieu: string;
 };
+
 
 
 function Home(){
 
-      const [departure, setDeparture] = useState<number | "">("");
-    const [destination, setDestination] = useState<number | "">("");
-    const [cities, setCities] = useState<CityType[]>([]);
+
+    // const API_BASE = 'http://localhost:3001'
+    const [departureCities, setDepartureCities] = useState<CityType[]>([]);
+    const [arrivedCities, setArrivedCities] = useState<CityType[]>([]);
+     const navigate=useNavigate()
+    const handleSelectDeparture = (lieuName:string) => {
+       navigate("/destination",{
+        state:{
+            departureCities:lieuName,
+        },
+       });
+    };
+
+      const handleSelectArrived= (lieuName:string) => {
+       navigate("/destination",{
+        state:{
+            arrivedCities:lieuName,
+        },
+       });
+    };
 
 
     useEffect(() => {
-    fetch("http://localhost:3310/api/cities")
+    fetch('http://localhost:3001/api/destinations')
     .then((res) => res.json())
     .then((data: CityType[]) => {
-      setCities(data);
+      setDepartureCities(data);
+      setArrivedCities(data);
      });
     }, []);
 
-     const filteredCities = cities.filter((city) => {
-    return city.name;
-  });
+//      const filteredCities = cities.filter((city) => {
+//     return city.name;
+//   });
 
     return(
      
@@ -42,13 +63,13 @@ function Home(){
               <select
               id="point_de_depart"
               className="home-input"
-              value={departure}
-              onChange={(e) => setDeparture(e.target.value ? Number(e.target.value) : "")}
+              value=""
+              onChange={(e) => handleSelectDeparture(e.target.value)  }
             >
               <option value="">Choisir...</option>
-                 {filteredCities.map((city) => (
-              <option key={city.id} value={city.id}>
-                 {city.name}
+                 {departureCities.map((city) => (
+              <option key={city.id} value={city.lieu}>
+                 {city.lieu}
               </option>
               ))}
             </select>
@@ -58,18 +79,17 @@ function Home(){
            <select
              id="destination"
              className="home-input"
-             value={destination}
-             onChange={(e) => setDestination(e.target.value ? Number(e.target.value) : "")}
+             value=""
+             onChange={(e) => handleSelectArrived(e.target.value)}
            >
              <option value="">Choisir...</option>
-               {filteredCities.map((city) => (
-               <option key={city.id} value={city.id}>
-                 {city.name}
+               {arrivedCities.map((city) => (
+               <option key={city.id} value={city.lieu} >
+                 {city.lieu}
                  </option>
                ))}
            </select>
         </div>
-         <button type="button" className="home-button">RESERVER</button>
         </div>
         </div>
        </div>
