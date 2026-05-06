@@ -1,10 +1,43 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+// Import necessary modules from React and React Router
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router";
 
-createRoot(document.getElementById('root')!).render(
+/* ************************************************************************* */
+
+import App from "./App";
+
+import Home from "./pages/Home/Home";
+import Destination from "./pages/destination/Destination";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/destination",
+        element: <Destination />,
+      },
+    ],
+  },
+]);
+
+/* ************************************************************************* */
+
+// Find the root element in the HTML document
+const rootElement = document.getElementById("root");
+if (rootElement == null) {
+  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
+}
+
+// Render the app inside the root element
+createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
-)
+);
