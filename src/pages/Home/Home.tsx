@@ -96,7 +96,7 @@ function Home() {
 								value=""
 								onChange={(e) => {
 									const [lieuName, distance_index] = e.target.value.split("|");
-									handleSelectDeparture(lieuName, Number(distance_index));
+									handleSelectArrived(lieuName, Number(distance_index));
 								}}
 							>
 								<option value="">Choisir...</option>

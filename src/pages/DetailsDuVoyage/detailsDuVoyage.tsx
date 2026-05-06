@@ -36,7 +36,7 @@ console.log(maps)
         </div>
         <div className='millieuxPages'>
             <div className='imagePageVoyage'>
-                <img src={`http://localhost:3001${maps[2]?.image}`} className='cartePageVoyage' />
+                <img src={`http://localhost:3001${maps[2]?.image}`} className='cartePageVoyage' alt="img" />
                     <div className='btnPageVoyage'>
                         <button type="button"><CheckCircledIcon/> CONFIRMER LE VOYAGE</button>
                         <button type="button">MODIFIER LE VOYAGE</button>

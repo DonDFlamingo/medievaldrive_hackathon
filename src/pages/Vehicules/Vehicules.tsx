@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Vehicules.css";
 
-import parchemin from "../assets/parchemin.png";
-import sceau from "../assets/sceau-medieval.png";
-import map from "../assets/vielleCarte.jpg";
+import parchemin from "../../assets/parchemin.png";
+import sceau from "../../assets/sceau-medieval.png";
+import map from "../../assets/vielleCarte.jpg";
 
 type Vehicle = {
 	id: number;

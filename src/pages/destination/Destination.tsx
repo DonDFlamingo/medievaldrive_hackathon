@@ -8,25 +8,28 @@ type CityType = {
 	lieu: string;
 	arrivedCities: string;
 	departureCities: string;
+	distance_index: number;
 };
 
 function Destination() {
 	const [destination, setDestination] = useState<CityType[]>([]);
 	const { state } = useLocation() as { state: CityType };
 	const navigate = useNavigate();
-	const handleSelectDeparture = (lieuName: string) => {
+	const handleSelectDeparture = (lieuName: string,distance_index: number) => {
 		navigate("/vehicules", {
 			state: {
 				arrivedCities: state.arrivedCities,
 				departureCities: lieuName,
+				distance_index,
 			},
 		});
 	};
-	const handleSelectArrived = (lieuName: string) => {
+	const handleSelectArrived = (lieuName: string,distance_index: number) => {
 		navigate("/vehicules", {
 			state: {
 				arrivedCities: lieuName,
 				departureCities: state.departureCities,
+				distance_index,
 			},
 		});
 	};
@@ -55,13 +58,16 @@ function Destination() {
 							name="depart-destination"
 							id="depart-destination"
 							defaultValue=""
-							onChange={(e) => handleSelectDeparture(e.target.value)}
+							onChange={(e) => {
+									const [lieuName, distance_index] = e.target.value.split("|");
+									handleSelectDeparture(lieuName, Number(distance_index));
+								}}
 						>
 							<option value={state.departureCities}>
 								{state.departureCities || "choisir..."}
 							</option>
 							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.lieu}>
+								<option key={lieu.id} value={`${lieu.lieu}|${lieu.distance_index}`}>
 									{lieu.lieu}
 								</option>
 							))}
@@ -71,13 +77,16 @@ function Destination() {
 							name="arrivee-destination"
 							id="arrivee-destination"
 							defaultValue=""
-							onChange={(e) => handleSelectArrived(e.target.value)}
+							onChange={(e) => {
+									const [lieuName, distance_index] = e.target.value.split("|");
+									handleSelectArrived(lieuName, Number(distance_index));
+								}}
 						>
 							<option value={state.arrivedCities}>
 								{state.arrivedCities || "choisir..."}
 							</option>
 							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.lieu}>
+								<option key={lieu.id} value={`${lieu.lieu}|${lieu.distance_index}`}>
 									{lieu.lieu}
 								</option>
 							))}
