@@ -55,8 +55,8 @@ function Home(){
        <div className='banniere-image' >
         <div className='banniere-container'>
         <h1 className='title-home'>Voyager à travers les royaumes avec Distinction</h1>
-        <p className='banniere-para'>Découvrez une excellence de transport sans précedent.Des carrosses royaux </p>
-        <p  className='banniere-p'>aux coursiers rapides, nous orchestrons chaque étape de votre épopée</p>
+        <p className='banniere-para'>Découvrez une excellence de transport sans précedent. Des carrosses royaux </p>
+        <p  className='banniere-p'>aux coursiers rapides, nous orchestrons chaque étape de votre épopée.</p>
         <div className="search-destination">
          <div className="field">
             <label htmlFor="point_de_depart" className="label">POINT DE DEPART</label>
@@ -96,21 +96,21 @@ function Home(){
        <div className='Cards-container'>
         <div className='card1'>
             <div className='card1-text'>
-            <h2>Royal Carriage</h2>
+            <h2 className='card2-text-title'>Royal Carriage</h2>
             <p>L'apogée du confort.Voyagez dans des habitacles de soie et d'ébène,protégés par notre garde d'élite.</p>
             </div>
         </div>
         <div className='card2'>
               <div className='card2-text'>
-             <h2 className='card2-text-title'>Rnight Express</h2>
-             <p>Pour les missives et les voyageurs pressés.Nos montures les plus rapides,entrainées pour l'endurence absolue à travers les colis de montagnes</p>
+             <h2 className='card2-text-title'>Knight Express</h2>
+             <p>Pour les missives et les voyageurs pressés. Nos montures les plus rapides, entrainées pour l'endurance absolue à travers les cols de montagnes.</p>
              </div>
              <img src={Card2} alt="Card1" className='home-image'/>
         </div>
         <div className='card3'>
-            <h2>Secure Caravane</h2>
-            <p className='card3-para'>Le stransport sécurise de vos biens les plus précieux.</p>
-            <p className='card3-para'>Escortes armées et scellés magiques garantis.</p>
+            <h2 className='card2-text-title'>Secure Caravane</h2>
+            <p className='card3-para'>Le stransport sécurise de vos biens les plus précieux.
+              <br/>Escortes armées et scellés magiques garantis.</p>
             <ul className='card3-ul'>
                 <li>Traçage par messager ailé</li>
                 <li>Assuranse royale sur le fret</li>
@@ -120,8 +120,8 @@ function Home(){
         <div className='card4'>
             <div className='home-image'/>
             <div className='card4-text'>
-            <h4 >Réseau Mondial</h4>
-            <h3 >14 ROYAUMES 120 RELAIS</h3>
+            <h3 className='card2-text-title'>Réseau Mondial</h3>
+            <h4 >14 Royaumes <br/> 120 Relais</h4>
             </div>
         </div>
        </div>
