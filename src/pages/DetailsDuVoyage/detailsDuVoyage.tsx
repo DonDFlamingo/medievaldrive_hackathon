@@ -1,4 +1,3 @@
-import React from 'react'
 import {ArrowRightIcon, CardStackIcon, CheckCircledIcon, LapTimerIcon, RocketIcon, StarIcon} from "@radix-ui/react-icons"
 import "./detailsDuVoyage.css"
 import { useEffect,useState } from 'react'
