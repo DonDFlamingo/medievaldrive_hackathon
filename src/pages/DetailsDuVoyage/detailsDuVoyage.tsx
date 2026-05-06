@@ -28,7 +28,7 @@ console.log(maps)
                     <div className='départDestinationPageVoyage'>
                         <h2 className='h2Voyage'>Origine</h2> <br /> Citadelle d'iron-Hold
                     </div>
-                        <ArrowRightIcon className='iconFlecheVoyage'/>
+                        <ArrowRightIcon className='iconPageVoyage'/>
                     <div>
                         <h2 className='h2Voyage'>DESTINATION</h2> <br /> Côte d'Azur
                     </div>
@@ -36,7 +36,7 @@ console.log(maps)
         </div>
         <div className='millieuxPages'>
             <div className='imagePageVoyage'>
-                <img src={`http://localhost:3001${maps[2]?.image}`} className='cartePageVoyage' />
+                <img src={`http://localhost:3001${maps[2]?.image}`} alt="imagePageVoyage" className='cartePageVoyage' />
                     <div className='btnPageVoyage'>
                         <button type="button"><CheckCircledIcon/> CONFIRMER LE VOYAGE</button>
                         <button type="button">MODIFIER LE VOYAGE</button>
@@ -45,20 +45,21 @@ console.log(maps)
             <div className='cardPageVoyage'>
                 <div className='statistiqueDeRoute'>
                     <h2 className='h2Voyage'>Statistiques de Route</h2>
-                        <ul>
-                            <li><RocketIcon /> DISTANCE 142 Lieues </li>
-                            <li><LapTimerIcon /> DUREE ESTIMEE 3 Soleils</li>
+                        <ul className="distancEtDureeVoyage">
+                            <li><RocketIcon className='iconPageVoyage'/> DISTANCE </li>
+                            <li>142 Lieues</li>
+                            {/* <li><LapTimerIcon className='iconPageVoyage'/> DUREE ESTIMEE 3 Soleils</li> */}
                         </ul>
                     <div>
-                        <CardStackIcon/> <br />
-                        PRIX TOTAL 3.550 fLORINS D'OR
+                        <CardStackIcon className='iconPageVoyage'/> <br />
+                        PRIX TOTAL 3.550 FLORINS D'OR
                     </div>
                 </div>
                     <div className='transportSelectionerPageVoyage'>
                     <h2 className='h2Voyage'>TRANSPORT SELECTIONNE</h2>
                         <ul>
                             <li>Noble Coach</li>
-                            <li>Classe Souveraine</li> <StarIcon/>
+                            <li>Classe Souveraine</li> <StarIcon className='iconPageVoyage'/>
                         </ul>
                         <ul>
                             <li>Sellerie en velours royal</li>

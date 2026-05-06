@@ -20,6 +20,12 @@ color: #C5A059;
 .departArriverPageVoyage {
     display: flex;
     align-items: center;
+    gap: 4%;
+}
+
+.distancEtDureeVoyage {
+    display: flex;
+    align-items: center;
 }
 
 .titrePageVoyage {
@@ -28,9 +34,9 @@ color: #C5A059;
     color: #C5A059;
 }
 
-.iconFlecheVoyage {
-    width: 20%;
-    height: 20px;
+.iconPageVoyage {
+    width: auto;
+    height: 30px;
     color: #C5A059;
 }
 
@@ -66,10 +72,29 @@ color: #C5A059;
 
 
 .statistiqueDeRoute {
-    border: solid 5px black;
-    height: 25%;
+    width: 80%;
+  background: radial-gradient(ellipse at top left, #f5efe6, #ede8df);
+  border: 1px solid #d9d0c2; 
+  padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); 
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  ul,li {
+    gap: 20px;
+  }
+
+  ul {
+    border-top: 1px  solid #d9d0c2; 
+    border-bottom: 1px  solid #d9d0c2; 
+    padding: 50px 0;
+    gap: 8px;
+  }
 }
 
 .transportSelectionerPageVoyage {
     border: solid 5px black;
+    width: 80%;
 }
