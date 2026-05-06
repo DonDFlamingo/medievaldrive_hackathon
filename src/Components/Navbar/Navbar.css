@@ -2,7 +2,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     position: fixed;
     z-index: 9999;
     width: 100%;
@@ -15,8 +15,16 @@
     font-family: 'UnifrakturMaguntia', serif;
 }
 
-.profile-nav{
+/* .profile-nav{
     text-decoration: none;
     color: black;
     padding-right: 40px;
+
+} */
+
+.img-nav{
+    margin-right: 40px;
+        width: 50px;
+        border-radius:50% ;
+    /* height: 50px; */
 }
