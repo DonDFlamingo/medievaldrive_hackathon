@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hautDePagesVoyage {
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
+
+.departArriverPageVoyage {
+    display: flex;
+    align-items: center;
+}
+
+.titrePageVoyage {
+    padding-bottom: 5%;
+}
+
+.iconFlecheVoyage {
+    width: 20%;
+    height: 20px;
+}
+
+.départDestinationPageVoyage {
+    display: flex;
+    flex-direction: column;
+}
