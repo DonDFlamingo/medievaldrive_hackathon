@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=DynaPuff:wght@400..700&family=UnifrakturCook:wght@700&display=swap");
 
 .destination {
-	/* height: 100vh; */
+	height: 100vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	padding-top: 5vh;
+	background-color: #f7f3e9;
 
 	.vielle-map {
-		width: 70%;
+		height: 90vh;
+		width: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
@@ -25,30 +28,34 @@
 			flex-direction: column;
 			align-items: center;
 			border-radius: 10px;
-			font-family: "UnifrakturCook", cursive;
-			font-size: 30px;
+			background-image: url(../../assets/parchemin.png);
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: center;
+			position: relative;
 
 			.h2-suggestion-lieu {
-				margin: 10px;
+				margin-bottom: 20px;
+				font-family: "UnifrakturCook", cursive;
+				font-size: 50px;
 			}
 
 			.hr-under-h2 {
 				border: none;
 				height: 3px;
-				background-color: #c4b9a062;
+				background-color: #816219;
 				width: 8%;
 				margin: 10px;
 			}
-			/* .hr-beyond-h2 {
-				border: none;
-				height: 3px;
-				background-color: #c4b9a0;
-				width: 100%;
-				margin: 20px auto;
-			} */
+			.sceau-medieval {
+				width: 24vh;
+				position: absolute;
+				left: -3vw;
+				top: -10vh;
+			}
 			.selection-destination {
 				width: 40%;
-				border: 2px solid #c4b9a0;
+				border: 2px solid #816219;
 				border-radius: 10px;
 				display: flex;
 				flex-direction: column;
@@ -58,17 +65,21 @@
 				.depart-destination {
 					margin: 20px;
 					cursor: pointer;
-					font-size: 18px;
-					font-family: "Manrope", sans-serif;
-					border: 2px solid #c4b9a0;
+					font-size: 22px;
+					/* font-family: "Manrope", sans-serif; */
+					font-family: "UnifrakturCook", cursive;
+
+					border: 2px solid #816219;
 					border-radius: 10px;
 				}
 				.arrivee-destination {
 					margin: 20px;
 					cursor: pointer;
-					font-size: 18px;
-					font-family: "Manrope", sans-serif;
-					border: 2px solid #c4b9a0;
+					font-size: 22px;
+					font-family: "UnifrakturCook", cursive;
+
+					/* font-family: "Manrope", sans-serif; */
+					border: 2px solid #816219;
 					border-radius: 10px;
 				}
 			}
@@ -84,15 +95,21 @@
 				justify-content: center;
 				align-items: center;
 				height: 10vh;
-				border-bottom: 1px solid #c4b9a049;
-				border-top: 1px solid #c4b9a049;
+				border-bottom: 1px solid #816219;
+				border-top: 1px solid #816219;
 				width: 100%;
+				/* font-family: "Manrope", sans-serif; */
+				font-family: "UnifrakturCook", cursive;
+				font-size: 22px;
 			}
 
-			.scroll-suggestion-lieu{
+			.scroll-suggestion-lieu {
 				overflow: auto;
-				height:29%;
-
+				height: 50%;
+				width: 50%;
+			}
+			.scroll-suggestion-lieu::-webkit-scrollbar {
+				display: none;
 			}
 		}
 	}
