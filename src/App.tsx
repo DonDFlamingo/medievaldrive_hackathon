@@ -1,14 +1,17 @@
-import Home from './pages/Home/Home'
 import './App.css'
 import { Outlet } from 'react-router-dom'
-import Vehicules from './pages/Vehicules'
-
+import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
 
   return (
-    <Vehicules />
+    <>
+    <Navbar/>
+    <Outlet />
+    <Footer/>
+    </>
   )
 }
 
