@@ -12,9 +12,24 @@ type CityType = {
 
 function Destination() {
 	const [destination, setDestination] = useState<CityType[]>([]);
-
 	const { state } = useLocation() as { state: CityType };
-
+	const navigate = useNavigate();
+	const handleSelectDeparture = (lieuName: string) => {
+		navigate("/vehicules", {
+			state: {
+				arrivedCities: state.arrivedCities,
+				departureCities: lieuName,
+			},
+		});
+	};
+	const handleSelectArrived = (lieuName: string) => {
+		navigate("/vehicules", {
+			state: {
+				arrivedCities: lieuName,
+				departureCities: state.departureCities,
+			},
+		});
+	};
 	useEffect(() => {
 		fetch("http://localhost:3001/api/destinations")
 			.then((res) => res.json())
@@ -40,8 +55,9 @@ function Destination() {
 							name="depart-destination"
 							id="depart-destination"
 							defaultValue=""
+							onChange={(e) => handleSelectDeparture(e.target.value)}
 						>
-							<option value={state.lieu}>
+							<option value={state.departureCities}>
 								{state.departureCities || "choisir..."}
 							</option>
 							{destination.map((lieu) => (
@@ -55,8 +71,11 @@ function Destination() {
 							name="arrivee-destination"
 							id="arrivee-destination"
 							defaultValue=""
+							onChange={(e) => handleSelectArrived(e.target.value)}
 						>
-							<option value="">{state.arrivedCities || "choisir..."}</option>
+							<option value={state.arrivedCities}>
+								{state.arrivedCities || "choisir..."}
+							</option>
 							{destination.map((lieu) => (
 								<option key={lieu.id} value={lieu.lieu}>
 									{lieu.lieu}
