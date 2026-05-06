@@ -1,313 +1,253 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap");
 
-/* =========================
-   BODY
-========================= */
-
-body {
-    margin: 0;
-    padding: 0;
-
-    background: #f6efe3;
-
-    /* font-family: "Cinzel", serif; */
-    color: #2d2418;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .h2Vehicule {
 color: #C5A059;
 }
-
-.departArriverPageVehicule {
-    background-color: white;
-    padding: 50px;
+.departArriverPageVehicule{
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto 90px auto;
+    justify-content: center;
+    background-color: white;
     width: 50%;
+    margin :80px auto;
+    padding: 20px;
+    border-radius: 20px;
 }
-
-.départDestinationPageVehicule {
+.départDestinationPageVehicule{
     display: flex;
     flex-direction: column;
 }
-/* =========================
-   PAGE
-========================= */
-
 .vehicles-page {
-    min-height: 100vh;
-
-    background: linear-gradient(180deg,
-            #f6efe3 0%,
-            #efe4d1 100%);
-
+/* padding-top: 15vh; */
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f1e7;
+  padding: 2% 3%;
+  font-family: "Manrope", sans-serif;
+  color: #2d2215;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO */
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 60px;
-
-    padding: 80px 8%;
+.vehicles-hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4%;
+  margin-bottom: 4%;
 }
 
-/* HERO LEFT */
-
-.hero-left {
-    width: 40%;
+.vehicles-hero-left {
+  width: 32%;
 }
 
-/* SUBTITLE */
-
-.subtitle {
-    color: #a37a35;
-
-    font-size: 14px;
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
+.vehicles-subtitle {
+  font-size: 0.9vw;
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  color: #9b7443;
+  text-transform: uppercase;
 }
 
-/* HERO TITLE */
-
-.hero h1 {
-    margin: 20px 0;
-
-    font-size: 72px;
-    line-height: 1.1;
-
-    color: #2b2118;
+.vehicles-title {
+  font-family: "Cinzel", serif;
+  font-size: 4.2vw;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 3%;
 }
 
-/* HERO TEXT */
-
-.hero p {
-    max-width: 500px;
-
-    font-size: 20px;
-    line-height: 1.8;
-
-    color: #5f5244;
+.vehicles-divider {
+  width: 30%;
+  height: 0.2vw;
+  background-color: #c9a46a;
+  margin: 6% 0;
 }
 
-/* HERO MAP */
-
-.hero-map {
-    width: 60%;
+.vehicles-description {
+  width: 85%;
+  font-size: 1.1vw;
+  line-height: 1.9;
+  color: #4a4034;
 }
 
-.hero-map img {
-    width: 100%;
-
-    border-radius: 24px;
-
-    object-fit: cover;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.12);
+.vehicles-hero-map {
+  width: 63%;
 }
 
-/* =========================
-   PARCHEMIN SECTION
-========================= */
-
-.parchemin-section {
-    position: relative;
-
-    width: 88%;
-
-    margin: 0 auto 80px auto;
-
-    padding: 80px 60px;
-
-    border-radius: 30px;
-
-    background-size: cover;
-    background-position: center;
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.12);
+.vehicles-map-image {
+  width: 88%;
+  display: block;
+  border-radius: 1vw;
 }
 
-/* PARCHEMIN OVERLAY */
+/* PARCHEMIN */
 
-.parchemin-section::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    pointer-events: none;
+.vehicles-parchemin {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.8vw;
+  padding: 4%;
+  box-shadow: 0 0.3vw 1.5vw rgba(0, 0, 0, 0.08);
 }
 
-/* =========================
-   SCEAU
-========================= */
-
-.sceau {
-    position: absolute;
-
-    top: -45px;
-    right: 40px;
-
-    width: 150px;
-
-    z-index: 2;
+.vehicles-sceau {
+  position: absolute;
+  top: -2%;
+  right: 1.5%;
+  width: 9%;
+  z-index: 50;
+  pointer-events: none;
 }
 
-/* =========================
-   CATEGORY SECTION
-========================= */
-
-.category {
-    position: relative;
-    z-index: 2;
-
-    margin-bottom: 90px;
+.vehicles-category-description {
+  font-size: 1vw;
+  color: #5b4630;
+  margin-bottom: 3%;
 }
 
-.category:last-child {
-    margin-bottom: 0;
+/* GRID */
+
+.vehicles-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
 }
 
-/* CATEGORY TITLE */
-
-.category h2 {
-    margin-bottom: 12px;
-
-    font-size: 34px;
-    font-weight: 700;
-
-    color: #8f6430;
-}
-
-/* CATEGORY DESCRIPTION */
-
-.category-description {
-    margin-bottom: 35px;
-
-    color: #6e5b47;
-
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-/* =========================
-   VEHICLES GRID
-========================= */
-
-.vehicles-container {
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit,
-            minmax(300px, 1fr));
-
-    gap: 32px;
-}
-
-/* =========================
-   VEHICLE CARD
-========================= */
+/* CARD */
 
 .vehicle-card {
-    overflow: hidden;
-
-    border-radius: 24px;
-
-    background: rgba(255,
-            255,
-            255,
-            0.35);
-
-    backdrop-filter: blur(4px);
-
-    box-shadow:
-        0 10px 25px rgba(0,
-            0,
-            0,
-            0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-        text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f2e8;
+  border-radius: 1vw;
+  overflow: hidden;
+  text-decoration: none;
+  transition: 0.25s;
+  border: 0.18vw solid transparent;
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.08);
 }
-
-/* CARD HOVER */
 
 .vehicle-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 35px rgba(0,
-            0,
-            0,
-            0.14);
+  transform: translateY(-0.2vw);
+  border: 0.18vw solid #8B5A2B;
+  box-shadow: 0 0.6vw 1.5vw rgba(139, 90, 43, 0.25);
 }
 
-/* =========================
-   VEHICLE IMAGE
-========================= */
+.vehicles-card.selected {
+  border: 0.22vw solid #8B5A2B;
+  box-shadow: 0 0.5vw 2vw rgba(139, 90, 43, 0.3);
+}
 
 .vehicle-image {
-    width: 100%;
-    height: 260px;
-
-    object-fit: cover;
+  width: 100%;
+  height: 21vw;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: 0.3s ease;
 }
 
-/* =========================
-   VEHICLE INFOS
-========================= */
-
-.vehicle-info {
-    /* display: flex;
-    justify-content: space-between; */
-    align-items: center;
-    text-align: center;
-
-    padding: 24px;
+.vehicle-content {
+  padding: 5%;
 }
 
-/* VEHICLE NAME */
-
-.vehicle-info h3 {
-    margin: 0 0 10px 0;
-
-    font-size: 20px;
-    color: #2e241a;
+.vehicle-name {
+  font-family: "Cinzel", serif;
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #2b2117;
+  margin-bottom: 2%;
 }
 
-/* VEHICLE TEXT */
-
-.vehicle-info p {
-    margin: 0;
-
-    color: #6e5d49;
-
-    font-size: 14px;
+.vehicle-description {
+  font-size: 0.9vw;
+  line-height: 1.6;
+  color: #6b5844;
+  min-height: 3vw;
+  margin-bottom: 5%;
 }
 
-/* =========================
-   PRICE
-========================= */
+.vehicle-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.price {
-    font-size: 30px;
-    font-weight: 700;
+.vehicle-places {
+  font-size: 0.85vw;
+  color: #7a6248;
+}
 
-    color: #a27436;
+.vehicle-price {
+  font-family: "Cinzel", serif;
+  font-size: 1.8vw;
+  font-weight: 700;
+  color: #8f5a2a;
+}
 
-    white-space: nowrap;
+/* ICON SELECT */
+
+.vehicle-selected-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 0.2vw solid #8f5a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8f5a2a;
+  font-size: 1vw;
+  font-weight: 700;
+}
+
+/* BUTTON */
+
+.vehicles-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4%;
+}
+
+.vehicles-button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    #6d431c,
+    #9b6732
+  );
+  color: white;
+  padding: 1.2% 4%;
+  border-radius: 0.7vw;
+  font-family: "Cinzel", serif;
+  font-size: 1.1vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.vehicles-button:hover {
+  background: linear-gradient(to right, #8b5a2b, #b87932);
+  transform: translateY(-0.15vw);
+  box-shadow: 0 0.5vw 1.2vw rgba(139, 90, 43, 0.35);
+}
+
+.vehicles-button:active {
+  transform: scale(0.98);
 }
