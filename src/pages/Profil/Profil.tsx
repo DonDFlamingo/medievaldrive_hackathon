@@ -76,7 +76,7 @@ function Profil() {
 						</div>
 						<div className="profil-history-item-div-right">
 							<h3>ACCOMPLIE</h3>
-							<span>232 Gold</span>
+							<span>232 Ecus</span>
 						</div>
 					</div>
 					<div className="profil-history-item">
@@ -89,7 +89,7 @@ function Profil() {
 						</div>
 						<div className="profil-history-item-div-right">
 							<h3>ÉCHEC (Pillage par les nomades du désert)</h3>
-							<span>0 Gold</span>
+							<span>0 Ecus</span>
 						</div>
 					</div>
 					<div className="profil-history-item">
@@ -100,7 +100,7 @@ function Profil() {
 						</div>
 						<div className="profil-history-item-div-right">
 							<h3>ACCOMPLIE</h3>
-							<span>580 Gold</span>
+							<span>580 Ecus</span>
 						</div>
 					</div>
 				</div>
