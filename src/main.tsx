@@ -10,6 +10,7 @@ import App from "./App";
 import Home from "./pages/Home/Home";
 import Destination from "./pages/destination/Destination";
 import Profil from "./pages/Profil/Profil";
+import DetailsDuVoyage from "./pages/DetailsDuVoyage/detailsDuVoyage";
 
 const router = createBrowserRouter([
 	{
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
 				path: "/profil",
 				element: <Profil />,
 			},
+			{
+				path: "/detailsDuVoyage",
+				element: <DetailsDuVoyage />,
+			}
 		],
 	},
 ]);
