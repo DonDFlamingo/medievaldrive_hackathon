@@ -1,221 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .vehicles-page {
-    min-height: 100vh;
-    background: #f8f3ea;
-    padding: 40px 60px;
-    font-family: "Georgia", serif;
-    color: #2f2419;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f1e7;
+  padding: 2% 3%;
+  font-family: "Manrope", sans-serif;
+  color: #2d2215;
 }
 
 /* HERO */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 40px;
+
+.vehicles-hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4%;
+  margin-bottom: 4%;
 }
 
-/* HERO LEFT */
-
-.hero-left {
-    width: 35%;
+.vehicles-hero-left {
+  width: 32%;
 }
 
-.subtitle {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #9c6b2f;
-    text-transform: uppercase;
+.vehicles-subtitle {
+  font-size: 0.9vw;
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  color: #9b7443;
+  text-transform: uppercase;
 }
 
-.hero-title {
-    font-size: 78px;
-    line-height: 1;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #1f1610;
-    text-transform: uppercase;
+.vehicles-title {
+  font-family: "Cinzel", serif;
+  font-size: 4.2vw;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 3%;
 }
 
-.hero-line {
-    width: 140px;
-    height: 3px;
-    background: #b88942;
-    margin-bottom: 30px;
-    border-radius: 10px;
+.vehicles-divider {
+  width: 30%;
+  height: 0.2vw;
+  background-color: #c9a46a;
+  margin: 6% 0;
 }
 
-.hero-description {
-    font-size: 22px;
-    line-height: 1.8;
-    color: #5a4633;
-    max-width: 500px;
+.vehicles-description {
+  width: 85%;
+  font-size: 1.1vw;
+  line-height: 1.9;
+  color: #4a4034;
 }
 
-/* HERO MAP */
-.hero-map {
-    width: 65%;
-    display: flex;
-    justify-content: center;
+.vehicles-hero-map {
+  width: 63%;
 }
 
-.map-image {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 24px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+.vehicles-map-image {
+  width: 88%;
+  display: block;
+  border-radius: 1vw;
 }
 
-/* PARCHEMIN SECTION */
-.parchemin-section {
-    position: relative;
-    padding: 80px 50px 40px;
-    border-radius: 28px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+/* PARCHEMIN */
+
+.vehicles-parchemin {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.8vw;
+  padding: 4%;
+  box-shadow: 0 0.3vw 1.5vw rgba(0, 0, 0, 0.08);
 }
 
-/* SCEAU */
-.sceau {
-    position: absolute;
-    top: -40px;
-    right: 30px;
-    width: 180px;
-    z-index: 10;
+.vehicles-sceau {
+  position: absolute;
+  top: -2%;
+  right: 1.5%;
+  width: 9%;
+  z-index: 50;
+  pointer-events: none;
 }
 
-/* VEHICLES GRID */
-.vehicles-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+.vehicles-category-description {
+  font-size: 1vw;
+  color: #5b4630;
+  margin-bottom: 3%;
 }
 
-/* VEHICLE CARD */
+/* GRID */
+
+.vehicles-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+}
+
+/* CARD */
+
 .vehicle-card {
-    background: rgba(255, 248, 236, 0.92);
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    border: 3px solid transparent;
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f2e8;
+  border-radius: 1vw;
+  overflow: hidden;
+  text-decoration: none;
+  transition: 0.25s;
+  border: 0.18vw solid transparent;
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.08);
 }
 
 .vehicle-card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-0.2vw);
+  border: 0.18vw solid #8B5A2B;
+  box-shadow: 0 0.6vw 1.5vw rgba(139, 90, 43, 0.25);
 }
 
-/* SELECTED CARD */
-.selected-card {
-    border: 3px solid #7b3f00;
-    box-shadow: 0 0 0 4px rgba(123, 63, 0, 0.15);
-}
-
-/* VEHICLE IMAGE */
-.vehicle-image-container {
-    position: relative;
+.vehicles-card.selected {
+  border: 0.22vw solid #8B5A2B;
+  box-shadow: 0 0.5vw 2vw rgba(139, 90, 43, 0.3);
 }
 
 .vehicle-image {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
-}
-
-/* SELECTED CHECK */
-.selected-check {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #7b3f00;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #f8f3ea;
-}
-
-/* VEHICLE INFO */
-.vehicle-info {
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 20px;
+  width: 100%;
+  height: 21vw;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: 0.3s ease;
 }
 
 .vehicle-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  padding: 5%;
 }
 
-/* VEHICLE TEXT */
 .vehicle-name {
-    font-size: 34px;
-    margin: 0;
-    color: #2d1d11;
+  font-family: "Cinzel", serif;
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #2b2117;
+  margin-bottom: 2%;
 }
 
 .vehicle-description {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #5d4a38;
-    margin: 0;
+  font-size: 0.9vw;
+  line-height: 1.6;
+  color: #6b5844;
+  min-height: 3vw;
+  margin-bottom: 5%;
 }
 
-/* VEHICLE DETAILS */
-.vehicle-details {
-    display: flex;
-    gap: 18px;
-    margin-top: 8px;
-    font-size: 16px;
-    color: #6e5439;
+.vehicle-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* PRICE */
-.price {
-    font-size: 36px;
-    font-weight: bold;
-    color: #8b5a1e;
-    white-space: nowrap;
+.vehicle-places {
+  font-size: 0.85vw;
+  color: #7a6248;
+}
+
+.vehicle-price {
+  font-family: "Cinzel", serif;
+  font-size: 1.8vw;
+  font-weight: 700;
+  color: #8f5a2a;
+}
+
+/* ICON SELECT */
+
+.vehicle-selected-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 0.2vw solid #8f5a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8f5a2a;
+  font-size: 1vw;
+  font-weight: 700;
 }
 
 /* BUTTON */
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 40px;
+
+.vehicles-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4%;
 }
 
-.choose-button {
-    background: linear-gradient(to right,
-            #5c2d00,
-            #8b5a1e);
-
-    color: white;
-    border: none;
-    padding: 20px 50px;
-    border-radius: 14px;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.25s ease;
+.vehicles-button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    #6d431c,
+    #9b6732
+  );
+  color: white;
+  padding: 1.2% 4%;
+  border-radius: 0.7vw;
+  font-family: "Cinzel", serif;
+  font-size: 1.1vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.choose-button:hover {
-    transform: scale(1.03);
-    opacity: 0.95;
+.vehicles-button:hover {
+  background: linear-gradient(to right, #8b5a2b, #b87932);
+  transform: translateY(-0.15vw);
+  box-shadow: 0 0.5vw 1.2vw rgba(139, 90, 43, 0.35);
+}
+
+.vehicles-button:active {
+  transform: scale(0.98);
 }
