@@ -1,8 +1,26 @@
 import React from 'react'
 import {ArrowRightIcon} from "@radix-ui/react-icons"
 import "./detailsDuVoyage.css"
+import { useEffect,useState } from 'react'
+
+
+type maps = {
+    id : number;
+    image : string;
+    points_interet ?: string;
+}
+
+
 
 function DetailsDuVoyage () {
+    const [maps, setMaps] = useState<maps[]>([])
+
+useEffect(() => {
+  fetch('http://localhost:3001/api/maps')
+    .then((r) => r.json())
+    .then((data) => setMaps(data))
+}, [])
+console.log(maps)
     return (
       <div className='pageDetailsDuVoyage'>
         <div className='hautDePagesVoyage'>
@@ -19,6 +37,7 @@ function DetailsDuVoyage () {
             </div>
             </div>
         </div>
+            <img src={`http://localhost:3001${maps[2]?.image}`} className='cartePageVoyage' />
       </div>
     )
 }

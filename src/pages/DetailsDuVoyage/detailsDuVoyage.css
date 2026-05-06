@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: gray
+}
+
+.pageDetailsDuVoyage {
+    
 }
 
 .hautDePagesVoyage {
@@ -26,4 +31,9 @@
 .départDestinationPageVoyage {
     display: flex;
     flex-direction: column;
+}
+
+.cartePageVoyage {
+    width: 100%;
+    height: auto;
 }
