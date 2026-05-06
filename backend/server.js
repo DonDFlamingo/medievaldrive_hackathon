@@ -33,7 +33,7 @@ app.get('/', (_req, res) => {
       'GET /api/destinations',
       'GET /api/destinations?distance_index=2',
       'GET /api/destinations/:id',
-      'GET /api/trajets/cout?depart_id=1&retour_id=8&vehicule_id=2&niveau_equipement=3',
+      'GET /api/trajets/cout?depart_id=1&retour_id=8&vehicule_id=2',
     ],
   })
 })
@@ -82,12 +82,10 @@ app.get('/api/trajets/cout', (req, res) => {
   const departId = Number(req.query.depart_id)
   const retourId = Number(req.query.retour_id)
   const vehiculeId = Number(req.query.vehicule_id)
-  const niveauEquipement = Number(req.query.niveau_equipement ?? 1)
 
-  if (!departId || !retourId || !vehiculeId || !niveauEquipement) {
+  if (!departId || !retourId || !vehiculeId) {
     return res.status(400).json({
-      error:
-        'Parametres invalides. Utilise: depart_id, retour_id, vehicule_id, niveau_equipement',
+      error: 'Parametres invalides. Utilise: depart_id, retour_id, vehicule_id',
     })
   }
 
@@ -95,7 +93,6 @@ app.get('/api/trajets/cout', (req, res) => {
     departId,
     retourId,
     vehiculeId,
-    niveauEquipement,
   })
 
   if (!trip) {
