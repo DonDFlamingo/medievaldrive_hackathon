@@ -24,8 +24,9 @@ color: #C5A059;
 }
 
 .distancEtDureeVoyage {
-    display: flex;
-    align-items: center;
+     border-top: 2px  solid #d9d0c2; 
+    border-bottom: 2px  solid #d9d0c2; 
+    padding: 40px 0px;
 }
 
 .titrePageVoyage {
@@ -72,7 +73,7 @@ color: #C5A059;
 
 
 .statistiqueDeRoute {
-    width: 80%;
+    width: 60%;
   background: radial-gradient(ellipse at top left, #f5efe6, #ede8df);
   border: 1px solid #d9d0c2; 
   padding: 24px 28px;
@@ -82,16 +83,12 @@ color: #C5A059;
   flex-direction: column;
   justify-content: space-around;
 
-  ul,li {
-    gap: 20px;
-  }
-
   ul {
-    border-top: 1px  solid #d9d0c2; 
-    border-bottom: 1px  solid #d9d0c2; 
-    padding: 50px 0;
-    gap: 8px;
-  }
+    display: flex;
+     align-items: flex-end;
+     justify-content: space-between;
+   width: 100%;
+  } 
 }
 
 .transportSelectionerPageVoyage {

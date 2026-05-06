@@ -45,11 +45,17 @@ console.log(maps)
             <div className='cardPageVoyage'>
                 <div className='statistiqueDeRoute'>
                     <h2 className='h2Voyage'>Statistiques de Route</h2>
-                        <ul className="distancEtDureeVoyage">
+                    <div className="distancEtDureeVoyage">
+                        <ul>
                             <li><RocketIcon className='iconPageVoyage'/> DISTANCE </li>
                             <li>142 Lieues</li>
                             {/* <li><LapTimerIcon className='iconPageVoyage'/> DUREE ESTIMEE 3 Soleils</li> */}
                         </ul>
+                        <ul>
+                            <li><LapTimerIcon className='iconPageVoyage'/> DUREE ESTIMEE</li>
+                            <li>3 Soleils</li>
+                        </ul>
+                    </div>
                     <div>
                         <CardStackIcon className='iconPageVoyage'/> <br />
                         PRIX TOTAL 3.550 FLORINS D'OR
