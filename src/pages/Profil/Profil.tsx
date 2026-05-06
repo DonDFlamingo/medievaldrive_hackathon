@@ -81,24 +81,26 @@ function Profil() {
 					</div>
 					<div className="profil-history-item">
 						<div className="profil-history-item-div-left">
-							<span>22 AVRIL MCCXXIV</span>
-							<h3>Convoi de Soie vers Malacca</h3>
-							<p>Monture : Navire marchand • Escorte : Mercenaires des Îles</p>
+							<span>15 MAI MCCXXIV</span>
+							<h3>Cargaison d'Épices vers Constantinople</h3>
+							<p>
+								Monture : Caravane de chameaux • Escorte : Gardes Varangiens
+							</p>
 						</div>
 						<div className="profil-history-item-div-right">
-							<h3>ACCOMPLIE</h3>
-							<span>232 Gold</span>
+							<h3>ÉCHEC (Pillage par les nomades du désert)</h3>
+							<span>0 Gold</span>
 						</div>
 					</div>
 					<div className="profil-history-item">
 						<div className="profil-history-item-div-left">
-							<span>22 AVRIL MCCXXIV</span>
-							<h3>Convoi de Soie vers Malacca</h3>
-							<p>Monture : Navire marchand • Escorte : Mercenaires des Îles</p>
+							<span>02 JUIN MCCXXIV</span>
+							<h3>Reliquaire Sacré vers la Cathédrale de Reims</h3>
+							<p>Monture : Chariot blindé • Escorte : Paladins de l'Ordre</p>
 						</div>
 						<div className="profil-history-item-div-right">
 							<h3>ACCOMPLIE</h3>
-							<span>232 Gold</span>
+							<span>580 Gold</span>
 						</div>
 					</div>
 				</div>
