@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Vehicules.css";
 
 import parchemin from "../assets/parchemin.png";
@@ -14,69 +16,48 @@ type Vehicle = {
   nombre_places: number;
 };
 
+type CityType = {
+  id: number;
+  lieu: string;
+  arrivedCities: string;
+  departureCities: string;
+};
 function Vehicules() {
-
   const [vehicules, setVehicules] = useState<Vehicle[]>([]);
-  const [selectedVehicule, setSelectedVehicule] = useState<number | null>(null);
-
+  const { state } = useLocation() as { state: CityType };
+  console.log(state);
   useEffect(() => {
-
     fetch("http://localhost:3001/api/vehicules")
-
       .then((response) => response.json())
-
       .then((data: Vehicle[]) => {
-
         console.log(data);
         setVehicules(data);
-
       })
-
       .catch((error) => {
-
         console.log(error);
-
       });
-
   }, []);
 
   return (
-
     <div className="vehicles-page">
-
       <section className="hero">
-
         <div className="hero-left">
+          <span className="subtitle">NOS VÉHICULES</span>
 
-          <span className="subtitle">
-            NOS VÉHICULES
-          </span>
-
-          <h1 className="hero-title">
+          <h1>
             Choisissez <br />
             votre véhicule
           </h1>
 
-          <div className="hero-line"></div>
-
-          <p className="hero-description">
-            Des montures rapides aux carrosses somptueux,
-            trouvez le transport parfait pour votre voyage
-            dans le royaume.
+          <p>
+            Des montures rapides aux carrosses somptueux, trouvez le transport
+            parfait pour votre voyage dans le royaume.
           </p>
-
         </div>
 
         <div className="hero-map">
-
-          <img
-            src={map}
-            alt="Carte médiévale"
-            className="map-image"
-          />
-
+          <img src={map} alt="Carte médiévale" />
         </div>
-
       </section>
 
       <section
@@ -85,94 +66,46 @@ function Vehicules() {
           backgroundImage: `url(${parchemin})`,
         }}
       >
+        <img src={sceau} className="sceau" alt="Sceau médiéval" />
 
-        <img
-          src={sceau}
-          className="sceau"
-          alt="Sceau médiéval"
-        />
+        <div className="category">
+          <p className="category-description">
+            Des chevaux rapides et agiles pour les voyageurs seuls.
+          </p>
 
-        <div className="vehicles-container">
-
-          {vehicules.map((vehicule) => (
-
-            <div
-              className={`vehicle-card ${selectedVehicule === vehicule.id
-                  ? "selected-card"
-                  : ""
-                }`}
-              key={vehicule.id}
-              onClick={() => setSelectedVehicule(vehicule.id)}
-            >
-
-              <div className="vehicle-image-container">
-
+          <div className="vehicles-container">
+            {vehicules.map((vehicule) => (
+              <Link
+                to="/detailsDuVoyage"
+                className="vehicle-card"
+                key={vehicule.id}
+              >
                 <img
                   className="vehicle-image"
                   src={`http://localhost:3001${vehicule.image}`}
                   alt={vehicule.nom}
                 />
 
-                {selectedVehicule === vehicule.id && (
+                <div className="vehicle-info">
+                  <div>
+                    <h3>{vehicule.nom}</h3>
 
-                  <div className="selected-check">
-                    ✓
+                    <p>{vehicule.description}</p>
+
+                    <p>
+                      Nombre de places:
+                      {vehicule.nombre_places}
+                    </p>
                   </div>
 
-                )}
-
-              </div>
-
-              <div className="vehicle-info">
-
-                <div className="vehicle-content">
-
-                  <h3 className="vehicle-name">
-                    {vehicule.nom}
-                  </h3>
-
-                  <p className="vehicle-description">
-                    {vehicule.description}
-                  </p>
-
-                  <div className="vehicle-details">
-
-                    <span>
-                      👥 {vehicule.nombre_places} places
-                    </span>
-
-                    <span>
-                      ⚔ Premium
-                    </span>
-
-                  </div>
-
+                  <span className="price">{vehicule.prix_ecu} écus</span>
                 </div>
-
-                <span className="price">
-                  {vehicule.prix_ecu} écus
-                </span>
-
-              </div>
-
-            </div>
-
-          ))}
-
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <div className="button-container">
-
-          <button className="choose-button">
-            CHOISISSEZ
-          </button>
-
-        </div>
-
       </section>
-
     </div>
-
   );
 }
 
