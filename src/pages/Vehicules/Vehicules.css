@@ -23,11 +23,11 @@ color: #C5A059;
     flex-direction: column;
 }
 .vehicles-page {
-/* padding-top: 15vh; */
+  /* padding-top: 15vh; */
   width: 100%;
   min-height: 100vh;
   background-color: #f6f1e7;
-  padding: 2% 3%;
+  padding: 7% 3%;
   font-family: "Manrope", sans-serif;
   color: #2d2215;
 }
