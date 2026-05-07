@@ -1,7 +1,16 @@
+.pageVoyageFull {
+	height: 92vh;
+}
+
 .pageDetailsDuVoyage {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	background-image: url(/src/assets/Background-image.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
 }
 
 .pageParchemin {
@@ -39,11 +48,10 @@
 .departArriverPageVoyage {
 	display: flex;
 	gap: 4%;
+	width: 100%;
 }
 
 .distancEtDureeVoyage {
-	border-top: 2px solid #d9d0c2;
-	border-bottom: 2px solid #d9d0c2;
 	padding: 30px 0px;
 	display: flex;
 	flex-direction: column;
@@ -71,7 +79,7 @@
 .chepaPourLeMoment {
 	display: flex;
 	flex-direction: column;
-	width: 33%;
+	width: 35%;
 	align-items: center;
 }
 
@@ -114,8 +122,6 @@
 }
 
 .transportSelectionerPageVoyage {
-	border: 1px solid #d9d0c2;
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 	height: 39vh;
 	display: flex;
 	flex-direction: column;
@@ -140,24 +146,3 @@
 	gap: 30px;
 	align-items: center;
 }
-
-/* .btnPageVoyage {
-	display: flex;
-	gap: 5%;
-}
-
-.btnConfirmerVoyage {
-	background-color: #002366;
-	color: white;
-	padding: 1.5% 5% 1.5% 5%;
-	display: flex;
-	gap: 10px;
-	border: none;
-}
-.btnModifierVoyage {
-	color: #c5a059;
-	background-color: white;
-	border-color: #c5a059;
-	padding: 1.5% 5% 1.5% 5%;
-	border: solid 1px;
-} */

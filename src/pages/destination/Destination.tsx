@@ -8,29 +8,41 @@ type CityType = {
 	lieu: string;
 	arrivedCities: string;
 	departureCities: string;
+	distance_index: number;
+	arrivedDistance: number;
+	departureDistance: number;
 };
 
 function Destination() {
 	const [destination, setDestination] = useState<CityType[]>([]);
 	const { state } = useLocation() as { state: CityType };
 	const navigate = useNavigate();
-	const handleSelectDeparture = (lieuName: string) => {
+	const handleSelectDeparture = (lieuName: string, distance_index: number) => {
 		navigate("/vehicules", {
 			state: {
 				arrivedCities: state.arrivedCities,
 				departureCities: lieuName,
+				departureDistance: distance_index,
+				arrivedDistance: state.arrivedDistance,
 			},
 		});
 	};
-	const handleSelectArrived = (lieuName: string) => {
+	const handleSelectArrived = (lieuName: string, distance_index: number) => {
 		navigate("/vehicules", {
 			state: {
 				arrivedCities: lieuName,
 				departureCities: state.departureCities,
+				arrivedDistance: distance_index,
+				departureDistance: state.departureDistance,
 			},
 		});
 	};
 	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "auto",
+		});
 		fetch("http://localhost:3001/api/destinations")
 			.then((res) => res.json())
 			.then((data: CityType[]) => {
@@ -42,53 +54,67 @@ function Destination() {
 
 	console.log(setDestination);
 	return (
-		<div className="destination">
-			<div className="vielle-map">
-				<div className="suggestion-lieu">
-					<hr className="hr-under-h2" />
-					<img className="sceau-medieval" src={sceau} alt="Sceau" />
-					<h2 className="h2-suggestion-lieu">Planifiez votre course</h2>
-					{/* <hr className="hr-beyond-h2" /> */}
-					<div className="selection-destination">
-						<select
-							className="depart-destination"
-							name="depart-destination"
-							id="depart-destination"
-							defaultValue=""
-							onChange={(e) => handleSelectDeparture(e.target.value)}
-						>
-							<option value={state.departureCities}>
-								{state.departureCities || "choisir..."}
-							</option>
-							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.lieu}>
-									{lieu.lieu}
+		<div className="destination-page-master">
+			<div className="destination">
+				<div className="vielle-map">
+					<div className="suggestion-lieu">
+						<hr className="hr-under-h2" />
+						<img className="sceau-medieval" src={sceau} alt="Sceau" />
+						<h2 className="h2-suggestion-lieu">Planifiez votre course</h2>
+						{/* <hr className="hr-beyond-h2" /> */}
+						<div className="selection-destination">
+							<select
+								className="depart-destination"
+								name="depart-destination"
+								id="depart-destination"
+								defaultValue=""
+								onChange={(e) => {
+									const [lieuName, distance_index] = e.target.value.split("|");
+									handleSelectDeparture(lieuName, Number(distance_index));
+								}}
+							>
+								<option value={state.departureCities}>
+									{state.departureCities || "choisir..."}
 								</option>
-							))}
-						</select>
-						<select
-							className="arrivee-destination"
-							name="arrivee-destination"
-							id="arrivee-destination"
-							defaultValue=""
-							onChange={(e) => handleSelectArrived(e.target.value)}
-						>
-							<option value={state.arrivedCities}>
-								{state.arrivedCities || "choisir..."}
-							</option>
-							{destination.map((lieu) => (
-								<option key={lieu.id} value={lieu.lieu}>
-									{lieu.lieu}
+								{destination.map((lieu) => (
+									<option
+										key={lieu.id}
+										value={`${lieu.lieu}|${lieu.distance_index}`}
+									>
+										{lieu.lieu}
+									</option>
+								))}
+							</select>
+							<select
+								className="arrivee-destination"
+								name="arrivee-destination"
+								id="arrivee-destination"
+								defaultValue=""
+								onChange={(e) => {
+									const [lieuName, distance_index] = e.target.value.split("|");
+									handleSelectArrived(lieuName, Number(distance_index));
+								}}
+							>
+								<option value={state.arrivedCities}>
+									{state.arrivedCities || "choisir..."}
 								</option>
+								{destination.map((lieu) => (
+									<option
+										key={lieu.id}
+										value={`${lieu.lieu}|${lieu.distance_index}`}
+									>
+										{lieu.lieu}
+									</option>
+								))}
+							</select>
+						</div>
+						<div className="scroll-suggestion-lieu">
+							{destination.map((lieu) => (
+								<div key={lieu.id} className="suggestion-lieu-item">
+									{lieu.lieu}
+								</div>
 							))}
-						</select>
-					</div>
-					<div className="scroll-suggestion-lieu">
-						{destination.map((lieu) => (
-							<div key={lieu.id} className="suggestion-lieu-item">
-								{lieu.lieu}
-							</div>
-						))}
+						</div>
 					</div>
 				</div>
 			</div>
