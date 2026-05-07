@@ -1,5 +1,8 @@
-.footer{
-    background-color: #f7f3e9c3;
-    text-align: center;
-    padding: 20px;
+.footer {
+	background-color: #f7f3e9c3;
+	text-align: center;
+	padding: 20px;
+	height: 8vh;
+	/* font-family: "UnifrakturMaguntia", serif; */
+	font-family: "Manrope", sans-serif;
 }
