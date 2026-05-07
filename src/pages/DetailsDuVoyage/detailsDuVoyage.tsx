@@ -1,14 +1,11 @@
 import {
 	ArrowRightIcon,
 	CardStackIcon,
-	CheckCircledIcon,
 	LapTimerIcon,
 	RocketIcon,
-	StarIcon,
 } from "@radix-ui/react-icons";
 import "./detailsDuVoyage.css";
 import { useEffect, useState } from "react";
-import Vehicules from "../Vehicules";
 
 type maps = {
 	id: number;
