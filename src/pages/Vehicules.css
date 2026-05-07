@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.vehicles-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f1e7;
+  padding: 2% 3%;
+  font-family: "Manrope", sans-serif;
+  color: #2d2215;
+}
+
+/* HERO */
+
+.vehicles-hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4%;
+  margin-bottom: 4%;
+}
+
+.vehicles-hero-left {
+  width: 32%;
+}
+
+.vehicles-subtitle {
+  font-size: 0.9vw;
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  color: #9b7443;
+  text-transform: uppercase;
+}
+
+.vehicles-title {
+  font-family: "Cinzel", serif;
+  font-size: 4.2vw;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 3%;
+}
+
+.vehicles-divider {
+  width: 30%;
+  height: 0.2vw;
+  background-color: #c9a46a;
+  margin: 6% 0;
+}
+
+.vehicles-description {
+  width: 85%;
+  font-size: 1.1vw;
+  line-height: 1.9;
+  color: #4a4034;
+}
+
+.vehicles-hero-map {
+  width: 63%;
+}
+
+.vehicles-map-image {
+  width: 88%;
+  display: block;
+  border-radius: 1vw;
+}
+
+/* PARCHEMIN */
+
+.vehicles-parchemin {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.8vw;
+  padding: 4%;
+  box-shadow: 0 0.3vw 1.5vw rgba(0, 0, 0, 0.08);
+}
+
+.vehicles-sceau {
+  position: absolute;
+  top: -2%;
+  right: 1.5%;
+  width: 9%;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.vehicles-category-description {
+  font-size: 1vw;
+  color: #5b4630;
+  margin-bottom: 3%;
+}
+
+/* GRID */
+
+.vehicles-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+}
+
+/* CARD */
+
+.vehicle-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f2e8;
+  border-radius: 1vw;
+  overflow: hidden;
+  text-decoration: none;
+  transition: 0.25s;
+  border: 0.18vw solid transparent;
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.08);
+}
+
+.vehicle-card:hover {
+  transform: translateY(-0.2vw);
+  border: 0.18vw solid #8B5A2B;
+  box-shadow: 0 0.6vw 1.5vw rgba(139, 90, 43, 0.25);
+}
+
+.vehicles-card.selected {
+  border: 0.22vw solid #8B5A2B;
+  box-shadow: 0 0.5vw 2vw rgba(139, 90, 43, 0.3);
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 21vw;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.vehicle-content {
+  padding: 5%;
+}
+
+.vehicle-name {
+  font-family: "Cinzel", serif;
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #2b2117;
+  margin-bottom: 2%;
+}
+
+.vehicle-description {
+  font-size: 0.9vw;
+  line-height: 1.6;
+  color: #6b5844;
+  min-height: 3vw;
+  margin-bottom: 5%;
+}
+
+.vehicle-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vehicle-places {
+  font-size: 0.85vw;
+  color: #7a6248;
+}
+
+.vehicle-price {
+  font-family: "Cinzel", serif;
+  font-size: 1.8vw;
+  font-weight: 700;
+  color: #8f5a2a;
+}
+
+/* ICON SELECT */
+
+.vehicle-selected-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 0.2vw solid #8f5a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8f5a2a;
+  font-size: 1vw;
+  font-weight: 700;
+}
+
+/* BUTTON */
+
+.vehicles-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4%;
+}
+
+.vehicles-button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    #6d431c,
+    #9b6732
+  );
+  color: white;
+  padding: 1.2% 4%;
+  border-radius: 0.7vw;
+  font-family: "Cinzel", serif;
+  font-size: 1.1vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.vehicles-button:hover {
+  background: linear-gradient(to right, #8b5a2b, #b87932);
+  transform: translateY(-0.15vw);
+  box-shadow: 0 0.5vw 1.2vw rgba(139, 90, 43, 0.35);
+}
+
+.vehicles-button:active {
+  transform: scale(0.98);
+}

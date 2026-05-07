@@ -3,6 +3,7 @@ import express from 'express'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  calculateTripCost,
   getDestinationById,
   getDestinations,
   getDestinationsByDistanceIndex,
@@ -32,6 +33,7 @@ app.get('/', (_req, res) => {
       'GET /api/destinations',
       'GET /api/destinations?distance_index=2',
       'GET /api/destinations/:id',
+      'GET /api/trajets/cout?depart_id=1&retour_id=8&vehicule_id=2',
     ],
   })
 })
@@ -74,6 +76,30 @@ app.get('/api/destinations/:id', (req, res) => {
     return res.status(404).json({ error: 'Destination introuvable' })
   }
   return res.json(destination)
+})
+
+app.get('/api/trajets/cout', (req, res) => {
+  const departId = Number(req.query.depart_id)
+  const retourId = Number(req.query.retour_id)
+  const vehiculeId = Number(req.query.vehicule_id)
+
+  if (!departId || !retourId || !vehiculeId) {
+    return res.status(400).json({
+      error: 'Parametres invalides. Utilise: depart_id, retour_id, vehicule_id',
+    })
+  }
+
+  const trip = calculateTripCost({
+    departId,
+    retourId,
+    vehiculeId,
+  })
+
+  if (!trip) {
+    return res.status(404).json({ error: 'Trajet impossible avec ces identifiants' })
+  }
+
+  return res.json(trip)
 })
 
 app.use((_req, res) => {
