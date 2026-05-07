@@ -9,6 +9,9 @@
 		justify-content: center;
 		padding-top: 15vh;
 		background-image: url("../../assets/Background-image.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 		height: 125vh;
 
 		.vielle-map {
