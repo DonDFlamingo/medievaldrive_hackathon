@@ -43,6 +43,8 @@
 .vehicles-page {
 	/* padding-top: 15vh; */
 	background-image: url("../../assets/Background-image.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 125vh;
 	justify-content: center;
 	padding-top: 15vh;

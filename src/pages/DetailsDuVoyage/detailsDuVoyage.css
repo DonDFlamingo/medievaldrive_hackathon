@@ -1,75 +1,148 @@
+.pageVoyageFull {
+	height: 92vh;
+}
 
 .pageDetailsDuVoyage {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #F7F3E9;
-    font-family: 'Manrope', sans-serif;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-image: url(/src/assets/Background-image.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
+
+.pageParchemin {
+	background-image: url(/src/assets/parchemin.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 62%;
+	height: 80%;
+	margin-top: 10vh;
+	background-color: #f7f3e9;
+	font-family: "Manrope", sans-serif;
+	display: flex;
+	background-size: cover;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+	border-radius: 10px;
 }
 
 .h2Voyage {
-color: #C5A059;
+	font-family: "UnifrakturMaguntia", serif;
 }
 
 .hautDePagesVoyage {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
+	display: flex;
+	flex-direction: column;
+	margin: 2% 5%;
+	border-left: solid 5px #a17930;
+	padding-left: 2%;
+	gap: 20px;
+	width: 100%;
+	align-items: flex-start;
 }
 
 .departArriverPageVoyage {
-    display: flex;
-    align-items: center;
+	display: flex;
+	gap: 4%;
+	width: 100%;
+}
+
+.distancEtDureeVoyage {
+	padding: 30px 0px;
+	display: flex;
+	flex-direction: column;
 }
 
 .titrePageVoyage {
-    padding-bottom: 1%;
-    font-family: 'UnifrakturMaguntia', serif;
-    color: #C5A059;
+	padding-bottom: 1%;
+	font-family: "UnifrakturMaguntia", serif;
 }
 
-.iconFlecheVoyage {
-    width: 20%;
-    height: 20px;
-    color: #C5A059;
+.iconPageVoyage {
+	width: auto;
+	height: 20px;
 }
 
 .millieuxPages {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
+	width: 30%;
+	height: auto;
 }
 
 .millieuxPages ul {
-    list-style: none;
+	list-style: none;
+}
+
+.chepaPourLeMoment {
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+	align-items: center;
 }
 
 .cardPageVoyage {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
 }
 
 .cartePageVoyage {
-    width: 90%;
-    height: auto;
-    padding-left: 2%;
+	width: 100%;
+	height: auto;
 }
 
 .départDestinationPageVoyage {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-
 .statistiqueDeRoute {
-    border: solid 5px black;
-    height: 25%;
+	padding-top: 20%;
+	.ulDistanceEtVoyage {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		width: 100%;
+		font-weight: 600;
+		font-size: 18px;
+	}
+}
+
+.testEspace {
+	display: flex;
+	gap: 20px;
+}
+
+.prixStatistiqueVoyage {
+	display: flex;
 }
 
 .transportSelectionerPageVoyage {
-    border: solid 5px black;
+	height: 39vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	.noblePageVoyage {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		font-weight: 600;
+		font-size: 18px;
+	}
+}
+
+.imageVehiculePageVoyage {
+	max-width: 50%;
+}
+
+.imagePageVoyage {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
 }
