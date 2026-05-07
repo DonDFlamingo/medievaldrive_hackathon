@@ -2,14 +2,14 @@ export const vehicules = [
   {
     id: 1,
     image: "/images/vehicules/cheval%20.png",
-    nom: "Brumacier",
+    nom: "Cheval: Brumacier",
     prix_ecu: 90,
     description: "Peu equipe, selle basique et sacoches legeres.",
     nombre_places: 1,
   },
   {
     id: 2,
-    nom: "Vent-Noir",
+    nom: "Cheval: Vent-Noir",
     nombre_places: 1,
     prix_ecu: 140,
     image: "/images/vehicules/cheval2.png",
@@ -17,7 +17,7 @@ export const vehicules = [
   },
 {
     id: 3,
-    nom: "Foudre d’Ambre",
+    nom: "Cheval: Foudre d’Ambre",
     nombre_places: 1,
     image: "/images/vehicules/cheval3.png",
     prix_ecu: 210,
@@ -26,14 +26,14 @@ export const vehicules = [
    {
     id: 4,
     image: "/images/vehicules/caleche.png",
-    nom: "L’Étoile Errante",
+    nom: "Caleche: L’Étoile Errante",
     prix_ecu: 180,
     description: "Peu equipee, caisse simple et protection minimale.",
     nombre_places: 3,
    },
     {
     id: 5,
-    nom: "La Roue d’Or",
+    nom: "Caleche: La Roue d’Or",
     image: "/images/vehicules/galeche2.png",
     prix_ecu: 260,
     description: "Bien equipee, assises ameliorees et structure plus stable.",
@@ -41,7 +41,7 @@ export const vehicules = [
    },
    {
     id: 6,
-    nom: "Le Corbeau Noir",
+    nom: "Caleche: Le Corbeau Noir",
     image: "/images/vehicules/galeche3.png",
     prix_ecu: 360,
     description: "Tres bien equipee, renforts complets et confort superieur.",
@@ -50,14 +50,14 @@ export const vehicules = [
    {
    id: 7,
     image: "/images/vehicules/carosse.png",
-    nom: "La Traverse Royale",
+    nom: "Carosse: La Traverse Royale",
     prix_ecu: 320,
     description: "Peu equipe, amenagement interieur sobre.",
     nombre_places: 5,
    },
     {
    id: 8,
-    nom: "Le Souffle du Nord",
+    nom: "Carosse: Le Souffle du Nord",
     image: "/images/vehicules/carosse2.png",
     prix_ecu: 460,
     description: "Bien equipe, interieur confortable et meilleure isolation.",
@@ -66,7 +66,7 @@ export const vehicules = [
 ,
   {
    id: 9,
-    nom: "La Voie des Marchands",
+    nom: "Carosse: La Voie des Marchands",
     image: "/images/vehicules/carosse3.png",
     prix_ecu: 620,
     description: "Tres bien equipe, finition noble et confort maximal.",

@@ -11,7 +11,7 @@ import Home from "./pages/Home/Home";
 import Destination from "./pages/destination/Destination";
 import Profil from "./pages/Profil/Profil";
 import DetailsDuVoyage from "./pages/DetailsDuVoyage/detailsDuVoyage";
-import Vehicules from "./pages/Vehicules";
+import Vehicules from "./pages/Vehicules/Vehicules";
 
 const router = createBrowserRouter([
 	{
