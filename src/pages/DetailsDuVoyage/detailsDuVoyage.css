@@ -1,172 +1,163 @@
-
 .pageDetailsDuVoyage {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-top: 10vh;
-    background-color: #F7F3E9;
-    font-family: 'Manrope', sans-serif;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.pageParchemin {
+	background-image: url(/src/assets/parchemin.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 62%;
+	height: 80%;
+	margin-top: 10vh;
+	background-color: #f7f3e9;
+	font-family: "Manrope", sans-serif;
+	display: flex;
+	background-size: cover;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+	border-radius: 10px;
 }
 
 .h2Voyage {
-color: #C5A059;
+	font-family: "UnifrakturMaguntia", serif;
 }
 
 .hautDePagesVoyage {
-    display: flex;
-    flex-direction: column;
-    margin: 2% 5%;
-    border-left: solid 5px #C5A059;
-    padding-left: 2%;
-    gap: 20px;
+	display: flex;
+	flex-direction: column;
+	margin: 2% 5%;
+	border-left: solid 5px #a17930;
+	padding-left: 2%;
+	gap: 20px;
+	width: 100%;
+	align-items: flex-start;
 }
 
 .departArriverPageVoyage {
-    display: flex;
-    align-items: center;
-    gap: 4%;
+	display: flex;
+	gap: 4%;
 }
 
 .distancEtDureeVoyage {
-        border-top: 2px solid #d9d0c2;
-    border-bottom: 2px solid #d9d0c2;
-    padding: 30px 0px;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
+	border-top: 2px solid #d9d0c2;
+	border-bottom: 2px solid #d9d0c2;
+	padding: 30px 0px;
+	display: flex;
+	flex-direction: column;
 }
 
 .titrePageVoyage {
-    padding-bottom: 1%;
-    font-family: 'UnifrakturMaguntia', serif;
-    color: #C5A059;
+	padding-bottom: 1%;
+	font-family: "UnifrakturMaguntia", serif;
 }
 
 .iconPageVoyage {
-    width: auto;
-    height: 20px;
-    color: #C5A059;
+	width: auto;
+	height: 20px;
 }
 
 .millieuxPages {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
-    padding-left: 5%;
+	width: 30%;
+	height: auto;
 }
 
 .millieuxPages ul {
-    list-style: none;
+	list-style: none;
+}
+
+.chepaPourLeMoment {
+	display: flex;
+	flex-direction: column;
+	width: 33%;
+	align-items: center;
 }
 
 .cardPageVoyage {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
 }
 
 .cartePageVoyage {
-    width: 90%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .départDestinationPageVoyage {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
-
 
 .statistiqueDeRoute {
-    width: 60%;
-  background: radial-gradient(ellipse at top left, #f5efe6, #ede8df);
-  border: 1px solid #d9d0c2; 
-  padding: 24px 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); 
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  .ulDistanceEtVoyage {
-          display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        font-weight: 600;
-        font-size: 18px;
-   
-  } 
-}
-
-.prixTotalVoyage {
-    color: #C5A059;
-    font-size: 1.7em;
+	padding-top: 20%;
+	.ulDistanceEtVoyage {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		width: 100%;
+		font-weight: 600;
+		font-size: 18px;
+	}
 }
 
 .testEspace {
-    display: flex;
-    gap: 20px;
+	display: flex;
+	gap: 20px;
 }
 
 .prixStatistiqueVoyage {
-    display: flex;
-
+	display: flex;
 }
 
 .transportSelectionerPageVoyage {
-       width: 60%;
-  background: radial-gradient(ellipse at top left, #f5efe6, #ede8df);
-  border: 1px solid #d9d0c2; 
-  padding: 24px 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); 
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+	border: 1px solid #d9d0c2;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+	height: 39vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 
-  .noblePageVoyage {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-        font-weight: 600;
-        font-size: 18px;
-  }
-  
+	.noblePageVoyage {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		font-weight: 600;
+		font-size: 18px;
+	}
 }
 
-
-
 .imageVehiculePageVoyage {
-    max-width: 50%;
+	max-width: 50%;
 }
 
 .imagePageVoyage {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
 }
 
-.btnPageVoyage {
-    display: flex;
-    gap: 5%;
+/* .btnPageVoyage {
+	display: flex;
+	gap: 5%;
 }
 
 .btnConfirmerVoyage {
-    background-color: #002366;
-    color: white;
-    padding: 1.5% 5% 1.5% 5%;
-    display: flex;
-    gap: 10px;
-    border: none;
+	background-color: #002366;
+	color: white;
+	padding: 1.5% 5% 1.5% 5%;
+	display: flex;
+	gap: 10px;
+	border: none;
 }
 .btnModifierVoyage {
-color: #C5A059;
-background-color: white;
-border-color: #C5A059;
-padding: 1.5% 5% 1.5% 5%;
-border: solid 1px;
-}
+	color: #c5a059;
+	background-color: white;
+	border-color: #c5a059;
+	padding: 1.5% 5% 1.5% 5%;
+	border: solid 1px;
+} */
