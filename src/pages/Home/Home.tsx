@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 type CityType = {
 	id: number;
 	lieu: string;
@@ -11,7 +13,6 @@ type CityType = {
 };
 
 function Home() {
-	// const API_BASE = 'http://localhost:3001'
 	const [departureCities, setDepartureCities] = useState<CityType[]>([]);
 	const [arrivedCities, setArrivedCities] = useState<CityType[]>([]);
 	const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Home() {
 		navigate("/destination", {
 			state: {
 				departureCities: lieuName,
-				departureDistance:distance_index,
+				departureDistance: distance_index,
 			},
 		});
 	};
@@ -28,17 +29,17 @@ function Home() {
 		navigate("/destination", {
 			state: {
 				arrivedCities: lieuName,
-				arrivedDistance:distance_index,
+				arrivedDistance: distance_index,
 			},
 		});
 	};
 	useEffect(() => {
-    	window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-		fetch("http://localhost:3001/api/destinations")
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "auto",
+		});
+		fetch(`${API_BASE_URL}/api/destinations`)
 			.then((res) => res.json())
 			.then((data: CityType[]) => {
 				setDepartureCities(data);

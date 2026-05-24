@@ -8,6 +8,8 @@ import "./detailsDuVoyage.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 type maps = {
 	id: number;
 	image: string;
@@ -44,8 +46,8 @@ function DetailsDuVoyage() {
 	console.log(vehicule);
 	useEffect(() => {
 		Promise.all([
-			fetch("http://localhost:3001/api/maps").then((r) => r.json()),
-			fetch("http://localhost:3001/api/vehicules").then((r) => r.json()),
+			fetch(`${API_BASE_URL}/api/maps`).then((r) => r.json()),
+			fetch(`${API_BASE_URL}/api/vehicules`).then((r) => r.json()),
 		]).then(([mapsData, vehiculesData]) => {
 			setMaps(mapsData);
 			setVehicule(vehiculesData);
@@ -72,7 +74,7 @@ function DetailsDuVoyage() {
 						</div>
 
 						<img
-							src={`http://localhost:3001${maps[i]?.image}`}
+							src={`${API_BASE_URL}${maps[i]?.image}`}
 							className="cartePageVoyage"
 							alt="img"
 						/>
@@ -124,7 +126,7 @@ function DetailsDuVoyage() {
 								<h3>{state.vehicule.nom}</h3>
 								<img
 									className="imageVehiculePageVoyage"
-									src={`http://localhost:3001${state.vehicule.image}`}
+									src={`${API_BASE_URL}${state.vehicule.image}`}
 									alt={state.vehicule.nom}
 								/>
 								<p>{state.vehicule.description}</p>

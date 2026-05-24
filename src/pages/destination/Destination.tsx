@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./Destination.css";
 import sceau from "../../assets/sceau-medieval.png";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 type CityType = {
 	id: number;
 	lieu: string;
@@ -43,7 +45,7 @@ function Destination() {
 			left: 0,
 			behavior: "auto",
 		});
-		fetch("http://localhost:3001/api/destinations")
+		fetch(`${API_BASE_URL}/api/destinations`)
 			.then((res) => res.json())
 			.then((data: CityType[]) => {
 				setDestination(data);

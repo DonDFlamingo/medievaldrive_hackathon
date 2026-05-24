@@ -7,6 +7,8 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import sceau from "../../assets/sceau-medieval.png";
 // import map from "../../assets/vielleCarte.jpg";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 type Vehicle = {
 	id: number;
 	nom: string;
@@ -42,7 +44,7 @@ function Vehicules() {
 			left: 0,
 			behavior: "auto",
 		});
-		fetch("http://localhost:3001/api/vehicules")
+		fetch(`${API_BASE_URL}/api/vehicules`)
 			.then((response) => response.json())
 			.then((data: Vehicle[]) => {
 				console.log(data);
@@ -52,21 +54,6 @@ function Vehicules() {
 				console.log(error);
 			});
 	}, []);
-
-	//   const { state } = useLocation() as { state: CityType };
-
-	//   console.log(state);
-
-	//   useEffect(() => {
-	//     fetch("http://localhost:3001/api/vehicules")
-	//       .then((response) => response.json())
-	//       .then((data: Vehicle[]) => {
-	//         setVehicules(data);
-	//       })
-	//       .catch((error) => {
-	//         console.log(error);
-	//       });
-	//   }, []);
 
 	return (
 		<div className="vehicule-page-master">
@@ -100,7 +87,7 @@ function Vehicules() {
 									>
 										<img
 											className="vehicle-image"
-											src={`http://localhost:3001${vehicule.image}`}
+											src={`${API_BASE_URL}${vehicule.image}`}
 											alt={vehicule.nom}
 										/>
 
