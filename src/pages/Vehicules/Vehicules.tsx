@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./Vehicules.css";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-import parchemin from "../../assets/parchemin.png";
 import sceau from "../../assets/sceau-medieval.png";
 // import map from "../../assets/vielleCarte.jpg";
 

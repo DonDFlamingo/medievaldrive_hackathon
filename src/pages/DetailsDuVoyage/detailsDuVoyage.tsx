@@ -41,7 +41,7 @@ function DetailsDuVoyage() {
 	const state = location.state as LocationState;
 	const [vehicule, setVehicule] = useState<LocationState[]>([]);
 	const i = Math.floor(Math.random() * 4);
-
+	console.log(vehicule);
 	useEffect(() => {
 		Promise.all([
 			fetch("http://localhost:3001/api/maps").then((r) => r.json()),
